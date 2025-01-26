@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Geschätzter Summit Rang</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<p>Verbleibende Zeit bis zum Ende des Summits:</p>
+	<h2 id="RemainingTimeText"></h2>
+	<p>Die empfohlenen Platzierungen für die Medaillen in "The Crew: Motorfest" sind derzeit wie folgt:</p>
+	<br>
+	<table id="rankTable">
+		<tr>
+			<td>Platin:</td>
+			<td id="platin"></td>
+		</tr>
+		<tr>
+			<td>Gold:</td>
+			<td id="gold"></td>
+		</tr>
+		<tr>
+			<td>Silber:</td>
+			<td id="silber"></td>
+		</tr>
+	</table>
+	<br>
+	
+	<h2>Die echten Grenzen sind:</h2>
+	<table>
+	  <tbody>
+		<tr>
+		  <td>Platin:</td>
+		  <td>10.000</td>
+		</tr>
+		<tr>
+		  <td>Gold:</td>
+		  <td>20.000</td>
+		</tr>
+		<tr>
+		  <td>Silber:</td>
+		  <td>40.000</td>
+		</tr>
+	  </tbody>
+	</table>
+	<br>
+	
+	<p> Die Platzierungen steigen, je näher der wöchentliche Summit dem Ende kommt, da die Spieler ihren Teilnahmezeitpunkt selbst wählen können. Ein erfahrener Spieler hat es jedoch sowohl zu Beginn als auch zum Ende des Summits leicht, da er mit seinen Fähigkeiten immer eine gute Platzierung erzielt.
+	<br><br>
+	Weniger erfahrene Spieler könnten schon zu Beginn Schwierigkeiten haben, hohe Platzierungen zu erreichen, da die Konkurrenz von Anfang an stark ist. Um dennoch den Bronze-Rang zu erreichen, genügt es, einen Test oder ein Rennen abzuschließen und dabei mindestens 1 Punkt im Summit zu erzielen. ;-) </p>
+	<script src="script.js"></script>
+	<script>
+		function formatWith1000sep(number) {
+			return new Intl.NumberFormat('de-DE').format(number);
+		}
+	</script>
+</body>
+</html>
