@@ -28,7 +28,7 @@ function getEstimatedRank() {
 	const seconds = Math.floor((remainingTime % 60000) / 1000); 
 
 	const locale = document.documentElement.lang; // Aktuelle Sprache (z. B. "en" oder "de")
-	const daysText = locale === "de" ? "Tage" : "days";
+	let daysText = locale === "de" ? "Tage" : "days";
 	if (days === 1) {
 		daysText = daysText.slice(0, -1); // Entfernt das letzte Zeichen von "Tage" oder "days"
 	}
