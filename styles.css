@@ -22,3 +22,7 @@ p {
 	font-size: 1.2em;
 	text-align: center;
 }
+
+#summit-info {
+	display: none;
+}
