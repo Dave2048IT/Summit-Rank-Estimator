@@ -18,11 +18,24 @@ td {
 	padding: 5px;
 }
 
-p {
+p, button {
 	font-size: 1.2em;
 	text-align: center;
 }
 
 #summit-info {
 	display: none;
+}
+
+input[type="number"] {
+    background-color: black;
+    color: white;
+    font-size: 1.5em;
+    text-align: right;
+    border: 1px solid white;
+    padding: 5px 10px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+	border-radius: 10px; 
 }

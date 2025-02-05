@@ -33,8 +33,22 @@ function getEstimatedRank() {
 }
 
 // Für 6d 23h
-function safeRank(remainingTimeMs, totalDurationMs = 601200000, maxRank = 10000) {
+function safeRank(remainingTimeMs = 0, totalDurationMs = 601200000, maxRank = 10000) {
     return maxRank * 0.99 * Math.pow((totalDurationMs - remainingTimeMs) / totalDurationMs, 1.5);
+}
+
+function calculateFinalRank() {
+    const inputField = document.getElementById("userRankInput");
+    const outputField = document.getElementById("finalRankOutput");
+    const userRank = Number(inputField.value);
+
+    if (!userRank || userRank <= 0) 
+        return (outputField.textContent = "Invalid.");
+    
+    if (!estimatedRank) 
+        return (outputField.textContent = "Unavailable.");
+
+    outputField.textContent = formatWith1000sep(Math.round(userRank / estimatedRank * safeRank(0)));
 }
 
 // Funktion zur Formatierung von Zahlen mit Tausendertrennung
