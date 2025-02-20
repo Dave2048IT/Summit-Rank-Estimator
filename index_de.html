@@ -1,61 +1,76 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Geschätzter Summit Rang</title>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geschätzter Summit Rang</title>
+  <link rel="stylesheet" href="style_new.css">
+  <style>
+    @font-face {
+      font-display: swap;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      src: url('fonts/montserrat-v29-latin-regular.woff2') format('woff2');
+    }
+    @font-face {
+      font-display: swap;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 800;
+      src: url('fonts/montserrat-v29-latin-800.woff2') format('woff2');
+    }
+  </style>
 </head>
 <body>
-	<h2 id="summit-info">Die Auswertung des vorherigen Summits läuft. Leaderboards sind ab 4:00 Uhr (UTC) wieder verfügbar.<br><br></h2>
-	<p>Verbleibende Zeit bis zum Ende des Summits:</p>
-	<h2 id="RemainingTimeText">7 Tage</h2>
-	<p>Die empfohlenen Platzierungen für die Medaillen in "The Crew: Motorfest" sind derzeit wie folgt:</p>
-	<br>
-	<table id="rankTable">
-		<tr>
-			<td>Platin:</td>
-			<td id="platin">---</td>
-		</tr>
-		<tr>
-			<td>Gold:</td>
-			<td id="gold">---</td>
-		</tr>
-		<tr>
-			<td>Silber:</td>
-			<td id="silber">---</td>
-		</tr>
-	</table>
-	<br>
-	
-	<h2>Die echten Grenzen sind:</h2>
-	<table>
-	  <tbody>
-		<tr>
-		  <td>Platin:</td>
-		  <td>10.000</td>
-		</tr>
-		<tr>
-		  <td>Gold:</td>
-		  <td>20.000</td>
-		</tr>
-		<tr>
-		  <td>Silber:</td>
-		  <td>40.000</td>
-		</tr>
-	  </tbody>
-	</table>
-	<br>
-	<h2>Berechne deinen Endrang</h2>
-	<p>Gib deinen aktuellen Rang ein, um deine voraussichtliche Endplatzierung zu schätzen:</p>
-	<input type="number" id="userRankInput" placeholder="Gib deinen Rang ein">
-	<button onclick="calculateFinalRank()">Berechnen</button>
-	<h3 id="rankNumber">Voraussichtlicher Endrang: <span id="finalRankOutput">---</span></h3>
-	<br>
-	
-	<p> Die Platzierungen steigen, je näher der wöchentliche Summit dem Ende kommt, da die Spieler ihren Teilnahmezeitpunkt selbst wählen können. Ein erfahrener Spieler hat es jedoch sowohl zu Beginn als auch zum Ende des Summits leicht, da er mit seinen Fähigkeiten immer eine gute Platzierung erzielt.
-	<br><br>
-	Weniger erfahrene Spieler könnten schon zu Beginn Schwierigkeiten haben, hohe Platzierungen zu erreichen, da die Konkurrenz von Anfang an stark ist. Um dennoch den Bronze-Rang zu erreichen, genügt es, einen Test oder ein Rennen abzuschließen und dabei mindestens 1 Punkt im Summit zu erzielen. ;-) </p>
-	<script src="script.js"></script>
+  <header>
+    <div id="headline_box">
+      <h1 id="headline">"The Crew Motorfest" : <br> Vorhersage für Summit Platzierungen</h1>
+    </div>
+  </header>
+  <main>
+    <section id="countdown">
+      <div id="subheadline_box">
+        <h2 id="summit-info">Die Auswertung des vorherigen Summits läuft. Leaderboards sind ab 4:00 Uhr (UTC) wieder verfügbar.<br><br></h2>
+        <p>Verbleibende Zeit bis zum Ende des Summits:</p>
+        <h2 id="RemainingTimeText">7 Tage</h2>
+        <p>Die empfohlenen Platzierungen für die Medaillen in<br>"The Crew: Motorfest" sind derzeit wie folgt:</p>
+      </div>
+      <div class="rankContainer">
+        <div class="rankItem">
+          <img id="platinImg" src="images/platinum.webp" alt="Platin">
+          <span id="platin"></span>
+          <img id="goldImg" src="images/gold.webp" alt="Gold">
+          <span id="gold"></span>
+          <img id="silberImg" src="images/silver.webp" alt="Silber">
+          <span id="silber"></span>
+        </div>
+      </div>
+    </section>
+    
+    <section id="actual-limits">
+      <h2>Die echten Grenzen sind:</h2>
+      <ul>
+        <li><strong>Platin:</strong> 10000.</li>
+        <li><strong>Gold:  </strong> 20000.</li>
+        <li><strong>Silber:</strong> 40000.</li>
+      </ul>
+    </section>
+    
+    <section id="calculation">
+      <h2>Berechne deinen Endrang</h2>
+      <label for="userRankInput">Gib deinen aktuellen Rang ein</label>
+      <input type="number" id="userRankInput">
+      <div class="button-container">
+        <button onclick="calculateFinalRank()">BERECHNEN</button>
+      </div>
+      <h3 id="rankNumber">Voraussichtlicher Endrang: <span id="finalRankOutput">---</span></h3>
+    </section>
+  </main>
+  <footer class="footer-text">
+    <p>Die Platzierungen steigen, je näher der wöchentliche Summit dem Ende kommt, da die Spieler ihren Teilnahmezeitpunkt selbst wählen können. Ein erfahrener Spieler hat es jedoch sowohl zu Beginn als auch zum Ende des Summits leicht, da er mit seinen Fähigkeiten immer eine gute Platzierung erzielt.</p>
+    <p>Weniger erfahrene Spieler könnten schon zu Beginn Schwierigkeiten haben, hohe Platzierungen zu erreichen, da die Konkurrenz von Anfang an stark ist. Um dennoch den Bronze-Rang 🥉 zu erreichen, genügt es, einen Test oder ein Rennen abzuschließen und dabei mindestens 1 Punkt im Summit zu erzielen. ;-)</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
