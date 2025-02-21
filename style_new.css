@@ -41,6 +41,10 @@ header {
     font-size: clamp(1rem, 3vw, 2rem);
 }
 
+.language-switch {
+    min-width: fit-content;
+}
+
 .language-switch a {
     text-decoration: none;
     font-weight: bold;

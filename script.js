@@ -113,8 +113,8 @@ function updateDisplay() {
 		// DOM aktualisieren
 		for (const medal in ranks) {
             medalEls[medal].textContent = locale === "de" 
-			? "Platz ≤ " + ranks[medal] + "." 
-			: "Rank ≤ " + ranks[medal] + getOrdinalSuperscript(ranks[medal]);
+			? "Dein Platz ≤ " + ranks[medal] + "." 
+			: "Your Rank ≤ " + ranks[medal] + getOrdinalSuperscript(ranks[medal]);
 		}
 	}
 }
